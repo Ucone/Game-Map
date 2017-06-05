@@ -8,6 +8,10 @@ PImage im;
 
 Element [][] obj;
 Element [][] mapi;
+Element elementSelected;
+
+//Units
+Castle castle;
 
 void setup(){
   
@@ -20,18 +24,14 @@ void setup(){
     
   map = new Map();
   
-
+  castle = new Castle(0*blockDimension, 5*blockDimension);
+  obj[0][5] = castle;
   
 }
 
 
-
-void draw(){
-  
+void draw(){  
   map.draw();
-  
-  
-  
 }
 
 public void drawSelection(int i, int j){
@@ -43,21 +43,28 @@ public void drawSelection(int i, int j){
   }
   /*Hacer un switch,
   Si TIPO  (o la imagen == tal)
-  sacar características
-  
+  sacar características 
   */
-  
 }
 
 void mousePressed(){
     
   //Pincha en el tablero
   if(mouseX < 0 || mouseX > mapDimension*blockDimension || mouseY < 0 || mouseY > mapDimension*blockDimension){
-    //Fuera del tablero
-     
+    //Fuera del tablero  
   }else{
      println("x es: " + mouseX/blockDimension);
      println("y es: " + mouseY/blockDimension);
+     if (obj[mouseX/blockDimension][mouseY/blockDimension] != null){
+       elementSelected = obj[mouseX/blockDimension][mouseY/blockDimension];
+       
+       if (elementSelected.type == "BUILDING" ){
+         elementSelected.menu.draw();
+         println("draw menu");
+       }
+       
+     }    
+     
      drawSelection(mouseX/blockDimension, mouseY/blockDimension);
   }
   
@@ -66,5 +73,5 @@ void mousePressed(){
 void keyPressed(){
 
   
- map.On(); 
+ //map.On(); 
 }

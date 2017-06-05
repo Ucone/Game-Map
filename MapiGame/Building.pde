@@ -3,29 +3,28 @@ class Building extends Element{
 
   boolean menuOn;
   int slots;
+
+  Element [] elements; //Elementos que contiene el menu
   
   
   Building(float xPos, float yPos){
     super(xPos, yPos);
+    elementType = ElementType.BLOCK;
+    menu = new Menu(6, null);
 
   }
   
   
-  void draw(){
+  //void draw(){
     
-    image(image, xPos, yPos); 
-    if (menuOn){
-      rect(mapDimension*blockDimension, 0, 200, 400);
-      dibujarSlots();
+  //  image(image, xPos, yPos); 
+  //  if (menuOn){
+  //    rect(mapDimension*blockDimension, 0, 200, 400);
+  //    menu.draw();
       
-    }
-  }
-  
-  public void dibujarSlots(){
-     for (int i = 0; i< slots; i++){
-        
-     }
-  }
+  //  }
+  //}
+
   
 }
 
@@ -36,12 +35,14 @@ class Castle extends Building{
    this.image = loadImage("./images/buildings/castle.png");
    this.image.resize(blockDimension, blockDimension);
    slots = 6;
-   
+   elements = new Element [0];
+   menu = new Menu(6, elements);
+   type = "BUILDING";
  }
  
- void menu(){
-   menuOn = true;
- }
+ //void menu(){
+ //  menuOn = true;
+ //}
  
 
  

@@ -9,9 +9,9 @@ public class Block extends Element{
     
   }
   
-  void draw(){
-     image(image, xPos, yPos);  
-  }
+  //void draw(){
+  //   image(image, xPos, yPos);  
+  //}
 }
 
 class Water extends Block{

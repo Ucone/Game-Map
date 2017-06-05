@@ -1,12 +1,10 @@
 class Map{
   
- Block [][] blocks; 
- Castle castle;
-
-  
+ //Block [][] blocks; 
+ 
   
  Map(){
-   blocks = new Block [mapDimension][mapDimension];
+   mapi = new Block [mapDimension][mapDimension];
    Block blockIn;
    for (int i = 0; i< mapDimension; i++){
      for(int j = 0; j<mapDimension; j++){
@@ -16,31 +14,43 @@ class Map{
        }else{  
          blockIn= new Block(i*blockDimension, j*blockDimension);
        }
-       blocks[i][j] = blockIn;
+       mapi[i][j] = blockIn;
        mapi[i][j] = blockIn;
      }
    }
      
-  castle = new Castle(0*blockDimension, 5*blockDimension);
-  obj[0][5] = castle;
-  //DANGER!!! QUE PASA SI BORRAS EL EDIFICIO?!! has sobreescrito obj castle encima del terreno
+  //castle = new Castle(0*blockDimension, 5*blockDimension);
+  //obj[0][5] = castle;
+  ////DANGER!!! QUE PASA SI BORRAS EL EDIFICIO?!! has sobreescrito obj castle encima del terreno
   
    
  }
  
  void draw(){
+   drawMap();
+   drawElements();
+      
+ }
+ 
+ public void drawMap(){
    for (int i = 0; i< mapDimension; i++){
      for(int j = 0; j<mapDimension; j++){
-       blocks[i][j].draw();
+       mapi[i][j].draw();
+     }
+   }
+ }
+ 
+ public void drawElements(){
+   for (int i = 0; i< mapDimension; i++){
+     for(int j = 0; j<mapXDimension; j++){ //Seguro que aqui es mapXdimension??
+       if (obj[i][j] != null){
+         obj[i][j].draw();
+       }
      }
    }
    
-   castle.draw();
- }  
- 
- void On(){
-   
-  castle.menu(); 
  }
+ 
+  
   
 }
