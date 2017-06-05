@@ -1,6 +1,8 @@
 
 int blockDimension = 50;
 int mapDimension = 10;
+int mapXDimension = 10;
+
 Map map;
 PImage im;
 

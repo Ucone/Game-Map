@@ -13,7 +13,7 @@ class Map{
        if (i == 5){
          blockIn= new Water(i*blockDimension, j*blockDimension);
          
-       }else{
+       }else{  
          blockIn= new Block(i*blockDimension, j*blockDimension);
        }
        blocks[i][j] = blockIn;
