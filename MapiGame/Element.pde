@@ -1,7 +1,7 @@
 
-public enum ElementType {BUILDING, BLOCK, UNIT};
+//public enum ElementType {BUILDING, BLOCK, UNIT};
 
-ElementType elementType = ElementType.BLOCK;
+//ElementType elementType = ElementType.BLOCK;
 
 class Element{
   
@@ -22,9 +22,9 @@ class Element{
     this.yPos = yPos;    
   }
   
-  public ElementType getElementType(){
-    return elementType;    
-  }
+  //public ElementType getElementType(){
+  //  return elementType;    
+  //}
   
   void draw(){
     image(image, xPos, yPos);  

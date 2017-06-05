@@ -9,7 +9,7 @@ class Building extends Element{
   
   Building(float xPos, float yPos){
     super(xPos, yPos);
-    elementType = ElementType.BLOCK;
+    //elementType = ElementType.BLOCK;
     menu = new Menu(6, null);
 
   }
