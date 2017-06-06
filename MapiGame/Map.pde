@@ -9,13 +9,12 @@ class Map{
    for (int i = 0; i< mapDimension; i++){
      for(int j = 0; j<mapDimension; j++){
        if (i == 5){
-         blockIn= new Water(i*blockDimension, j*blockDimension);
+         blockIn= new Water(i, j);
          
        }else{  
-         blockIn= new Block(i*blockDimension, j*blockDimension);
+         blockIn= new Block(i, j);
        }
-       mapi[i][j] = blockIn;
-       mapi[i][j] = blockIn;
+
      }
    }
      
@@ -45,6 +44,7 @@ class Map{
      for(int j = 0; j<mapXDimension; j++){ //Seguro que aqui es mapXdimension??
        if (obj[i][j] != null){
          obj[i][j].draw();
+         println("pintando obj");
        }
      }
    }

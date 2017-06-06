@@ -1,12 +1,21 @@
-public class Block extends Element{
+public class Block{
   
+    
+  int x;
+  int y;
+  PImage image;
   
-  
-  Block(float xPos, float yPos){
-    super(xPos, yPos);
+  Block(int x, int y){
+    this.x = x;
+    this.y = y;
     this.image = loadImage("./images/sprites/green.png");
     this.image.resize(blockDimension, blockDimension);
+    mapi[x][y] = this;
     
+  }
+  
+  void draw(){
+    image(image, x*blockDimension, y*blockDimension);  
   }
   
   //void draw(){
@@ -15,7 +24,7 @@ public class Block extends Element{
 }
 
 class Water extends Block{
-  public Water(float xPos, float yPos){
+  public Water(int xPos, int yPos){
     super(xPos, yPos);
     this.image = loadImage("./images/sprites/water.png");
     this.image.resize(blockDimension, blockDimension);

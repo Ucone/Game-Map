@@ -7,7 +7,7 @@ Map map;
 PImage im;
 
 Element [][] obj;
-Element [][] mapi;
+Block [][] mapi;
 Element elementSelected;
 
 //Units
@@ -20,16 +20,23 @@ void setup(){
   size(800 ,800);
   background(0);
   
+  //for (int i = 0; i< mapDimension; i++){
+  //   for(int j = 0; j<mapDimension; j++){
+  //     //obj[i][j] = null;
+  //     mapi[i][j] = null;
+  //   }
+  //}
+  
   obj = new Element [mapDimension][mapDimension];
-  mapi = new Element [mapDimension][mapDimension];
+  mapi = new Block[mapDimension][mapDimension];
     
   map = new Map();
   
-  castle = new Castle(0*blockDimension, 5*blockDimension);
-  obj[0][5] = castle;
+  castle = new Castle(0, 5);
+  //obj[0][5] = castle;
   
-  unit = new Soldier(3*blockDimension, 3*blockDimension);
-  obj[3][3] = unit;
+  unit = new Soldier(3, 3);
+  //obj[3][3] = unit;
 }
 
 

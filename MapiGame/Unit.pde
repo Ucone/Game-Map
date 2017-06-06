@@ -2,7 +2,7 @@ class Unit extends Element{
   
   int movementRang;
   
-  Unit(float xPos, float yPos){
+  Unit(int xPos, int yPos){
     super(xPos, yPos);
     
   }
@@ -16,7 +16,7 @@ class Unit extends Element{
 
 class Soldier extends Unit{
   
-   Soldier(float xPos, float yPos){
+   Soldier(int xPos, int yPos){
    super(xPos, yPos);
    movementRang = 4;
    this.image = loadImage("./images/units/swordSoldier.jpg");

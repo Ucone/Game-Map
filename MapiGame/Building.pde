@@ -7,7 +7,7 @@ class Building extends Element{
   Element [] elements; //Elementos que contiene el menu
   
   
-  Building(float xPos, float yPos){
+  Building(int xPos, int yPos){
     super(xPos, yPos);
     //elementType = ElementType.BLOCK;
     menu = new Menu(6, null);
@@ -30,7 +30,7 @@ class Building extends Element{
 
 class Castle extends Building{
   
- Castle(float xPos, float yPos){
+ Castle(int xPos, int yPos){
    super(xPos, yPos);
    this.image = loadImage("./images/buildings/castle.png");
    this.image.resize(blockDimension, blockDimension);
