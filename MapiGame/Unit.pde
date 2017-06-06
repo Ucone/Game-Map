@@ -9,7 +9,11 @@ class Unit extends Element{
   
   
   public void moveLeft(){
-      this.xPos = xPos - blockDimension;
+    if(obj[x-1][y] != null){
+      x -= 1; 
+    }
+    println("moviendo left");
+
   }
 
 }

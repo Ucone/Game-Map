@@ -31,6 +31,7 @@ class Element{
      this.xPos = x*blockDimension;
      this.yPos = y*blockDimension;
      if(checkAvailable(x, y)){
+       println("object created!");
        obj[x][y] = this;
      }
   }

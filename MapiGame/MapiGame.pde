@@ -83,9 +83,11 @@ void mousePressed(){
 void keyPressed(){
   if(elementSelected != null){
     if(elementSelected.type == "UNIT"){
+      Unit uni = (Unit) elementSelected;
       if ( key == CODED){
         switch(keyCode){
          case LEFT:
+            uni.moveLeft();
             
             break;
          case RIGHT:
