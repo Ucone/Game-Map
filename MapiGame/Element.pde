@@ -55,6 +55,9 @@ class Element{
   
   void draw(){
     upDate();
+    
+    fill(#ff0000);
+    ellipse(xPos + blockDimension/2, yPos + blockDimension, blockDimension, 20);
     image(image, xPos, yPos);  
   }
   

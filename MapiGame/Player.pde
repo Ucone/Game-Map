@@ -3,10 +3,13 @@ class Player{
   String name;
   int team;
   ArrayList<Element> posesions;
+  color playerColor;
   
  Player(String name){
    this.name = name;
    this.posesions = new ArrayList<Element>();
+   
+
  }
  
  public void addBuilding(Building building){
