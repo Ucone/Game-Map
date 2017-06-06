@@ -12,6 +12,7 @@ Element elementSelected;
 
 //Units
 Castle castle;
+Unit unit;
 
 void setup(){
   
@@ -27,6 +28,8 @@ void setup(){
   castle = new Castle(0*blockDimension, 5*blockDimension);
   obj[0][5] = castle;
   
+  unit = new Soldier(3*blockDimension, 3*blockDimension);
+  obj[3][3] = unit;
 }
 
 
@@ -71,7 +74,25 @@ void mousePressed(){
 }
 
 void keyPressed(){
+  if(elementSelected != null){
+    if(elementSelected.type == "UNIT"){
+      if ( key == CODED){
+        switch(keyCode){
+         case LEFT:
+            
+            break;
+         case RIGHT:
+            
+            break;
+         case UP:
+         
+            break;
+         case DOWN:
+         
+            break; 
+        }
+      }
+    }
+  }
 
-  
- //map.On(); 
 }

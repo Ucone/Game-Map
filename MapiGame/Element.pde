@@ -12,6 +12,9 @@ class Element{
   Menu menu;
   String type;
   
+  int x;
+  int y;
+  
   Element(float xPos, float yPos, String str){
     this.xPos= xPos;
     this.yPos = yPos;    
@@ -22,6 +25,12 @@ class Element{
     this.yPos = yPos;    
   }
   
+  Element(int x, int y){
+     this.x = x;
+     this.y = y;
+     this.xPos = x*blockDimension;
+     this.yPos = y*blockDimension;
+  }
   //public ElementType getElementType(){
   //  return elementType;    
   //}
