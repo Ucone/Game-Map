@@ -1,6 +1,6 @@
 
 int blockDimension = 50;
-int mapDimension = 10;
+int mapYDimension = 10;
 int mapXDimension = 10;
 
 Map map;
@@ -27,16 +27,14 @@ void setup(){
   //   }
   //}
   
-  obj = new Element [mapDimension][mapDimension];
-  mapi = new Block[mapDimension][mapDimension];
+  obj = new Element [mapYDimension][mapYDimension];
+  mapi = new Block[mapYDimension][mapYDimension];
     
   map = new Map();
   
   castle = new Castle(0, 5);
-  //obj[0][5] = castle;
   
   unit = new Soldier(3, 3);
-  //obj[3][3] = unit;
 }
 
 
@@ -47,9 +45,9 @@ void draw(){
 public void drawSelection(int i, int j){
 
   if(obj[i][j] != null){
-    image(obj[i][j].image, 0, mapDimension*blockDimension);
+    image(obj[i][j].image, 0, mapYDimension*blockDimension);
   }else{
-    image(mapi[i][j].image, 0, mapDimension*blockDimension);
+    image(mapi[i][j].image, 0, mapYDimension*blockDimension);
   }
   /*Hacer un switch,
   Si TIPO  (o la imagen == tal)
@@ -60,7 +58,7 @@ public void drawSelection(int i, int j){
 void mousePressed(){
     
   //Pincha en el tablero
-  if(mouseX < 0 || mouseX > mapDimension*blockDimension || mouseY < 0 || mouseY > mapDimension*blockDimension){
+  if(mouseX < 0 || mouseX > mapYDimension*blockDimension || mouseY < 0 || mouseY > mapYDimension*blockDimension){
     //Fuera del tablero  
   }else{
      println("x es: " + mouseX/blockDimension);
@@ -73,7 +71,10 @@ void mousePressed(){
          println("draw menu");
        }
        
-     }    
+      //println("Element Selected type: " + elementSelected.type);
+     }else{
+       elementSelected = null; 
+     }
      
      drawSelection(mouseX/blockDimension, mouseY/blockDimension);
   }
@@ -82,25 +83,26 @@ void mousePressed(){
 
 void keyPressed(){
   if(elementSelected != null){
+    println("Element Selected type: " + elementSelected.type);
     if(elementSelected.type == "UNIT"){
       Unit uni = (Unit) elementSelected;
       if ( key == CODED){
         switch(keyCode){
          case LEFT:
-            uni.moveLeft();
-            
+            uni.moveLeft();            
             break;
          case RIGHT:
-            
+            uni.moveRight();
             break;
          case UP:
-         
+             uni.moveUp();
             break;
          case DOWN:
-         
+            uni.moveDown();
             break; 
         }
       }
+      uni.printStatus();
     }
   }
 

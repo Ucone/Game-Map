@@ -4,10 +4,10 @@ class Map{
  
   
  Map(){
-   mapi = new Block [mapDimension][mapDimension];
+   mapi = new Block [mapYDimension][mapYDimension];
    Block blockIn;
-   for (int i = 0; i< mapDimension; i++){
-     for(int j = 0; j<mapDimension; j++){
+   for (int i = 0; i< mapYDimension; i++){
+     for(int j = 0; j<mapYDimension; j++){
        if (i == 5){
          blockIn= new Water(i, j);         
        }else{  
@@ -25,15 +25,15 @@ class Map{
  }
  
  public void drawMap(){
-   for (int i = 0; i< mapDimension; i++){
-     for(int j = 0; j<mapDimension; j++){
+   for (int i = 0; i< mapYDimension; i++){
+     for(int j = 0; j<mapYDimension; j++){
        mapi[i][j].draw();
      }
    }
  }
  
  public void drawElements(){
-   for (int i = 0; i< mapDimension; i++){
+   for (int i = 0; i< mapYDimension; i++){
      for(int j = 0; j<mapXDimension; j++){ //Seguro que aqui es mapXdimension??
        if (obj[i][j] != null){
          obj[i][j].draw();

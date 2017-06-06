@@ -48,7 +48,13 @@ class Element{
   //  return elementType;    
   //}
   
+  void upDate(){
+     this.xPos = x*blockDimension;
+     this.yPos = y*blockDimension;
+  }
+  
   void draw(){
+    upDate();
     image(image, xPos, yPos);  
   }
   
